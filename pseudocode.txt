@@ -1,0 +1,40 @@
+liniair zoeken: "function linearSearch(array, target):
+    for each element in array:
+        if element == target:
+            return true
+    return false
+
+# Main Program
+array = generateSortedArray(10000)
+target = getRandomElement(array)
+
+start_time = getCurrentTime()
+result = linearSearch(array, target)
+end_time = getCurrentTime()
+
+print("Lineair zoeken vond het target: " + result)
+print("Lineair zoeken duurde: " + (end_time - start_time) + " seconden")
+"
+
+binair zoeken: "function binarySearch(array, target, low, high):
+    if low > high:
+        return false
+    mid = (low + high) // 2
+    if array[mid] == target:
+        return true
+    else if array[mid] > target:
+        return binarySearch(array, target, low, mid - 1)
+    else:
+        return binarySearch(array, target, mid + 1, high)
+
+# Main Program
+array = generateSortedArray(10000)
+target = getRandomElement(array)
+
+start_time = getCurrentTime()
+result = binarySearch(array, target, 0, length(array) - 1)
+end_time = getCurrentTime()
+
+print("Binair zoeken vond het target: " + result)
+print("Binair zoeken duurde: " + (end_time - start_time) + " seconden")
+"
